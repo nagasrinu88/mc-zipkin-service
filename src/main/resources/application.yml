@@ -2,15 +2,9 @@
 ---
 spring:
     application:
-        name: zipkin-service    
+        name: zipkin-service
+    cloud:
+        config:
+          uri: http://localhost:8888
 server:
   port: 9411
-
-eureka:
-  instance:
-      instanceId: ${spring.application.name}:${random.value}
-      ## this should not be enabled on production
-      leaseRenewalIntervalInSeconds: 5      
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
